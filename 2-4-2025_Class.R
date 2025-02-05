@@ -30,7 +30,13 @@ world_oceans[world_oceans$avg_depth_m > 4000, "oceans"]
 world_oceans$oceans[world_oceans$avg_depth_m > 4000]
 
 #Exercise 2.1 
-
+my_oceans= c("Atlantic", "Pacific")
+world_oceans = data.frame(oceans = c("Atlantic", "Pacific", "Indian", "Arctic", "Southern"),
+                          area_km2 = c(77e6, 156e6, 69e6, 14e6, 20e6),
+                          avg_depth_m = c(3926, 4028, 3963, 3953, 4500))
+my_oceans %in% world_oceans$oceans
+smaller_oceans=world_oceans[world_oceans$area_km2 < world_oceans$area_km2[1], ]
+my_oceans %in% smaller_oceans
 
 
 1+2==3
@@ -62,8 +68,17 @@ NA ==NA
 is.na(dat) #special test to look at NA because other things dont work 
 
 #Exercise 2.2
+w = 15
+x = c(-1, 0, 1)
+y = "February"
+z = c("Monday", "Tuesday", "January")
 
-
+w > 10 & w < 20
+any(x > 0)
+all(x > 0)
+y == "February"
+days= c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+sum(z %in% days)
 
 #2.3 Conditional Statements 
 num = -2
